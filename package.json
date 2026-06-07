@@ -1,0 +1,63 @@
+{
+  "name": "personal-blog",
+  "version": "0.0.1",
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build && pagefind --site dist",
+    "preview": "astro preview",
+    "astro": "astro",
+    "sync": "astro sync"
+  },
+  "dependencies": {
+    "@astrojs/mdx": "^5.0.4",
+    "@astrojs/react": "^5.0.4",
+    "@astrojs/rss": "^4.0.14",
+    "@astrojs/sitemap": "^3.6.0",
+    "@pagefind/default-ui": "^1.4.0",
+    "@resvg/resvg-js": "^2.6.2",
+    "@tailwindcss/vite": "^4.1.18",
+    "@vite-pwa/astro": "^1.2.0",
+    "astro": "^6.3.1",
+    "astro-embed": "^0.13.0",
+    "dayjs": "^1.11.19",
+    "fuse.js": "^7.1.0",
+    "github-slugger": "^2.0.0",
+    "gray-matter": "^4.0.3",
+    "lodash.kebabcase": "^4.1.1",
+    "pagefind": "^1.4.0",
+    "react": "^19.2.3",
+    "react-dom": "^19.2.3",
+    "reading-time": "^1.5.0",
+    "remark-collapse": "^0.1.2",
+    "remark-toc": "^9.0.0",
+    "satori": "^0.18.3",
+    "sharp": "^0.34.5",
+    "tailwindcss": "^4.1.18",
+    "typescript": "^5.9.3",
+    "unist-util-visit": "^5.1.0",
+    "zod": "^4.4.3"
+  },
+  "devDependencies": {
+    "@tailwindcss/typography": "^0.5.19"
+  },
+  "overrides": {
+    "esbuild": "^0.25.5",
+    "vite": "^6.3.5"
+  },
+  "engines": {
+    "node": ">=24.0.0"
+  },
+  "packageManager": "pnpm@10.33.2",
+  "pnpm": {
+    "overrides": {
+      "lodash@<=4.17.23": ">=4.18.0",
+      "lodash@>=4.0.0 <=4.17.22": ">=4.17.23",
+      "lodash@>=4.0.0 <=4.17.23": ">=4.18.0",
+      "serialize-javascript@<7.0.5": ">=7.0.5",
+      "serialize-javascript@<=7.0.2": ">=7.0.3",
+      "tmp@<=0.2.3": ">=0.2.4",
+      "yaml@>=2.0.0 <2.8.3": ">=2.8.3"
+    }
+  }
+}
