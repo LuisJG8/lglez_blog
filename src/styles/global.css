@@ -1,0 +1,160 @@
+@import "tailwindcss";
+@import "./typography.css";
+
+@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
+
+/* Font definitions */
+@font-face {
+  font-family: "Atkinson";
+  src: url("/fonts/atkinson-regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Atkinson";
+  src: url("/fonts/atkinson-bold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root,
+html[data-theme="light"] {
+  --background: #f7fbfe;
+  --foreground: #17365f;
+  --accent: #2c5ead;
+  --accent-strong: #1591dc;
+  --accent-soft: #4bb8fa;
+  --muted: #e8f5fd;
+  --border: #c4e2f5;
+  --surface: #ffffff;
+  --surface-tinted: #eff8fe;
+  --shadow-soft: 0 14px 32px rgba(44, 94, 173, 0.14);
+}
+
+html[data-theme="dark"] {
+  --background: #0f2749;
+  --foreground: #edf8ff;
+  --accent: #4bb8fa;
+  --accent-strong: #1591dc;
+  --accent-soft: #c4e2f5;
+  --muted: #173c6b;
+  --border: #2c5ead;
+  --surface: #12325b;
+  --surface-tinted: #163d70;
+  --shadow-soft: 0 16px 36px rgba(4, 15, 31, 0.34);
+}
+
+@theme {
+  --color-*: initial;
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-accent: var(--accent);
+  --color-primary: var(--accent);
+  --color-primary-foreground: var(--background);
+  --color-secondary: var(--surface-tinted);
+  --color-muted-foreground: color-mix(in srgb, var(--foreground) 68%, var(--background));
+  --color-muted: var(--muted);
+  --color-border: var(--border);
+  --color-surface: var(--surface);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-accent/75;
+    scrollbar-width: auto;
+    scrollbar-color: var(--color-muted) transparent;
+  }
+
+  /* View Transitions API for smooth theme switching (Safari 18+, Chrome 111+) */
+  :root {
+    view-transition-name: root;
+  }
+
+  /* Apply to html element as well for better compatibility */
+  html {
+    view-transition-name: root;
+  }
+
+  /* Ensure smooth transition between light and dark themes */
+  ::view-transition-old(root),
+  ::view-transition-new(root) {
+    animation-duration: 0.25s;
+  }
+
+  /* Customize the transition style */
+  ::view-transition-old(root) {
+    animation: fade-out 0.25s ease-out;
+  }
+
+  ::view-transition-new(root) {
+    animation: fade-in 0.25s ease-out;
+  }
+
+  @keyframes fade-out {
+    from { opacity: 1; }
+    to { opacity: 0; }
+  }
+
+  @keyframes fade-in {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  html {
+    @apply overflow-y-scroll scroll-smooth;
+  }
+  body {
+    @apply flex min-h-svh flex-col bg-background font-mono text-foreground selection:bg-accent/80 selection:text-background;
+  }
+  a,
+  button {
+    @apply outline-offset-1 outline-accent focus-visible:no-underline focus-visible:outline-2 focus-visible:outline-dashed;
+  }
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+  section,
+  footer {
+    @apply mx-auto max-w-3xl px-4;
+  }
+}
+
+.active-nav {
+  @apply text-accent underline decoration-wavy decoration-2 underline-offset-4;
+}
+
+#hero img {
+  border: 4px solid var(--border);
+  box-shadow: var(--shadow-soft);
+}
+
+#hero p,
+.post-meta {
+  color: color-mix(in srgb, var(--foreground) 74%, var(--background));
+}
+
+.post-card {
+  border-left: 4px solid var(--accent-soft);
+  background: color-mix(in srgb, var(--surface) 76%, var(--muted));
+  border-radius: 0 8px 8px 0;
+  box-shadow: 0 10px 24px rgba(44, 94, 173, 0.08);
+}
+
+.post-card:hover {
+  border-left-color: var(--accent);
+  box-shadow: var(--shadow-soft);
+}
+
+.newsletter-box {
+  background: var(--surface-tinted);
+  border-left: 4px solid var(--accent);
+  box-shadow: var(--shadow-soft);
+}
+
+.profile-photo {
+  margin-block: 0 !important;
+}

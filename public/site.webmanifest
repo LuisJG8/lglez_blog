@@ -1,0 +1,16 @@
+{
+  "name": "Luis Gonzalez",
+  "short_name": "Luis Gonzalez",
+  "description": "A personal blog about your work, projects, and notes.",
+  "icons": [
+    {
+      "src": "/favicon.ico",
+      "sizes": "16x16 32x32 48x48",
+      "type": "image/x-icon"
+    }
+  ],
+  "start_url": "/",
+  "display": "browser",
+  "theme_color": "#2C5EAD",
+  "background_color": "#F7FBFE"
+}
