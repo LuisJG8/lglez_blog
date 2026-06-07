@@ -25,7 +25,6 @@ Replace the placeholders in this project with your own name, domain, bio, links,
 ├── astro.config.mjs     # Astro configuration
 ├── vercel.json          # Vercel deployment and CSP configuration
 ├── package.json         # Project dependencies and scripts
-├── pnpm-lock.yaml       # Locked dependency graph
 └── LICENSE              # Dual license (CC BY 4.0 + MIT)
 ```
 
@@ -40,7 +39,7 @@ Replace the placeholders in this project with your own name, domain, bio, links,
 
 ## Deployment
 
-This site is set up for deployment on Vercel at `https://lglez.me`.
+This site is set up for deployment on Vercel.
 
 Vercel should use:
 
@@ -48,9 +47,9 @@ Vercel should use:
 - Install command: `pnpm install --frozen-lockfile`
 - Build command: `pnpm run build`
 - Output directory: `dist`
-- Production domain: `lglez.me`
+- Production domain: `lglez.me` for this blog
 
-The canonical site URL is configured in `src/consts.ts` as `https://lglez.me/`.
+The canonical site URL is configured in `src/consts.ts` and should match the production domain.
 
 ## License
 
