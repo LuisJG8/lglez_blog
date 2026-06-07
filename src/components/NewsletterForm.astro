@@ -1,0 +1,60 @@
+---
+export interface Props {
+  variant?: "default" | "compact";
+}
+
+const { variant = "default" } = Astro.props;
+---
+
+<div class={variant === 'default' ? 'newsletter-box rounded-lg p-6 my-8' : 'newsletter-compact mt-6'}>
+  {variant === 'default' && (
+    <p class="text-sm text-foreground/75 mb-4">
+      New posts and notes straight to your inbox.
+    </p>
+  )}
+
+  <form
+    action="https://buttondown.com/api/emails/embed-subscribe/your-newsletter"
+    method="post"
+    target="_blank"
+    class="flex flex-col sm:flex-row gap-3"
+  >
+    <input type="hidden" name="tag" value="blog" />
+    <input
+      type="text"
+      name="name"
+      placeholder="Luis Gonzalez"
+      class="min-w-0 flex-1 px-4 py-2 border border-border rounded-md bg-background text-foreground placeholder-foreground/45 focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent"
+    />
+    <input
+      type="email"
+      name="email"
+      placeholder="Your Email"
+      required
+      class="min-w-0 flex-1 px-4 py-2 border border-border rounded-md bg-background text-foreground placeholder-foreground/45 focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent"
+    />
+    <button
+      type="submit"
+      class="min-w-0 px-6 py-2 bg-accent rounded-md hover:bg-primary/90 transition-colors font-semibold whitespace-nowrap shadow-sm focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 focus:ring-offset-background"
+      style="color: white;"
+    >
+      Subscribe
+    </button>
+  </form>
+
+  {variant === 'default' && (
+    <p class="text-xs text-foreground/65 mt-3">
+      Replace the form action with your newsletter provider, or remove this component.
+    </p>
+  )}
+</div>
+
+<style>
+  @media (max-width: 640px) {
+    .newsletter-box {
+      margin-left: -1rem;
+      margin-right: -1rem;
+      border-radius: 0;
+    }
+  }
+</style>
