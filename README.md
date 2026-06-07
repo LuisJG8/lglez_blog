@@ -25,7 +25,7 @@ Replace the placeholders in this project with your own name, domain, bio, links,
 ├── astro.config.mjs     # Astro configuration
 ├── vercel.json          # Vercel deployment and CSP configuration
 ├── package.json         # Project dependencies and scripts
-├── tailwind.config.mjs  # Tailwind CSS configuration
+├── pnpm-lock.yaml       # Locked dependency graph
 └── LICENSE              # Dual license (CC BY 4.0 + MIT)
 ```
 
@@ -40,7 +40,17 @@ Replace the placeholders in this project with your own name, domain, bio, links,
 
 ## Deployment
 
-This site is set up for deployment on Vercel. Connect your own GitHub repository to Vercel and update `SITE.website` in `src/consts.ts` to match your domain.
+This site is set up for deployment on Vercel at `https://lglez.me`.
+
+Vercel should use:
+
+- Framework preset: Astro
+- Install command: `pnpm install --frozen-lockfile`
+- Build command: `pnpm run build`
+- Output directory: `dist`
+- Production domain: `lglez.me`
+
+The canonical site URL is configured in `src/consts.ts` as `https://lglez.me/`.
 
 ## License
 
