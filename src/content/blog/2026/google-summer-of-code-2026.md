@@ -12,7 +12,7 @@ I always wanted to contribute to open source projects, but I was too afraid to d
 
 I love Machine Learning (ML) and all the frameworks and tools around it, so that is where I started looking. This led me to Metaflow, a project I was vaguely familiar with. Metaflow is an ML framework that lets you build ML projects quickly and easily.
 
-After joining the Slack community in early October, I introduced myself in one of the main channels and got a welcoming message from the creator of Metaflow, Ville Tullos. I also sent direct messages to some of the core maintainers of the project and asked for guidance on how to start learning the codebase and get more familiar with it.
+After joining the Slack community in early October, I introduced myself in one of the main channels and got a welcoming message from the creator of Metaflow, Ville Tuulos. I also sent direct messages to some of the core maintainers of the project and asked for guidance on how to start learning the codebase and get more familiar with it.
 
 I had also bought a copy of *Effective Data Science Infrastructure: How to Make Data Scientists Productive* in order to learn more about Metaflow at a high level.
 
