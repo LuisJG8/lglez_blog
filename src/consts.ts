@@ -36,7 +36,7 @@ export const SITE: Site = {
   profile: "https://lglez.me/about",
   desc: "A personal blog about your work, projects, and notes.",
   title: "Luis Gonzalez",
-  ogImage: "avatar-placeholder.svg",
+  ogImage: "luis-gonzalez.jpeg",
   lightAndDarkMode: true,
   postPerIndex: 10,
   postPerPage: 10,
